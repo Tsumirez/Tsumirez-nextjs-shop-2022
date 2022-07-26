@@ -19,8 +19,6 @@ export default async function handler(req, res) {
             const newImage = img.replace('image-', 'https://cdn.sanity.io/images/ytcu56uk/production/')
             .replace('-webp','.webp');
 
-            console.log('IMAGE', newImage);
-
             return {
               price_data: {
                 currency: 'pln',
@@ -51,8 +49,8 @@ export default async function handler(req, res) {
             //   quantity: 1,
             // },
           ,
-          success_url: `${req.headers.origin}/?success=true`,
-          cancel_url: `${req.headers.origin}/?canceled=true`,
+          success_url: `${req.headers.origin}/success`,
+          cancel_url: `${req.headers.origin}/canceled`,
         }
 
       // Create Checkout Sessions from body params.
